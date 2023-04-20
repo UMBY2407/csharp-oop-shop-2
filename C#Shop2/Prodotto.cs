@@ -12,17 +12,15 @@ namespace C_Shop2
 		private int codice;
 		private string name;
 		private string description;
-		private string categoria;
 		private float price;
 		private float priceWithIva;
 		private int iva;
 
 		//COSTRUTTORI
-		public Prodotto(string nome, string descrizione, string categoria, float prezzo, int iva)
+		public Prodotto(string nome, string descrizione, float prezzo, int iva)
 		{
 			this.name = nome;
 			this.description = descrizione;
-			this.categoria = categoria;
 			this.price = prezzo;
 			this.iva = iva;
 		}
@@ -37,11 +35,6 @@ namespace C_Shop2
 		public string getDescription()
 		{
 			return this.description;
-		}
-
-		public string getCategoria()
-		{
-			return this.categoria;
 		}
 
 		public float getPrice()
@@ -64,11 +57,6 @@ namespace C_Shop2
 		public void setDescription(string descrizione)
 		{
 			this.description = descrizione;
-		}
-
-		public void setCategoria(string categoria)
-		{
-			this.categoria = categoria;
 		}
 
 		public void setPrezzo(float prezzo)
@@ -103,7 +91,6 @@ namespace C_Shop2
 			Console.WriteLine("Codice prodotto: " + creaCodice());
 			Console.WriteLine("Nome prodotto: " + getNome());
 			Console.WriteLine("Descrizione prodotto: " + getDescription());
-			Console.WriteLine("Categoria prodotto: " + getCategoria());
 			Console.WriteLine("Prezzo prodotto (iva esclusa): " + getPrice() + " EUR");
 			Console.WriteLine("Prezzo prodotto (+ iva): " + getPriceWithIva() + " EUR");
 			Console.WriteLine("-------------------------------------------");
@@ -115,7 +102,6 @@ namespace C_Shop2
 			string rapprStringa = "Codice prodotto: " + creaCodice() + ", ";
 			rapprStringa += "Nome prodotto: " + this.name + ", ";
 			rapprStringa += "Descrizione del prodotto: " + this.description + ", ";
-			rapprStringa += "Categoria: " + this.categoria + ", ";
 			rapprStringa += "Prezzo prodotto (iva inclusa): " + this.priceWithIva + " EUR";
 
 			return rapprStringa;
