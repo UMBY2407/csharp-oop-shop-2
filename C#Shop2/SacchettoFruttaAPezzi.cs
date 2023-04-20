@@ -12,18 +12,30 @@ namespace C_Shop2
 		private string marca;
 		private string tipoFrutta;
 		private int quantitaFrutta;
-		private string tipo;
 
 		//COSTRUTTORE
-		public SacchettoFruttaAPezzi(string marca, string tipoFrutta, int quantitaFrutta, string tipo, string name, string description, float prezzo, int iva) : base(name, description, prezzo, iva)
+		public SacchettoFruttaAPezzi(string marca, string tipoFrutta, int quantitaFrutta, string name, string description, float prezzo, int iva) : base(name, description, prezzo, iva)
 		{
 			this.marca = marca;
 			this.tipoFrutta = tipoFrutta;
 			this.quantitaFrutta = quantitaFrutta;
-			this.tipo = tipo;
 		}
 
 		//GETTERS
+		public string GetMarca()
+		{
+			return this.marca;
+		}
+
+		public string GetTipoFrutta()
+		{
+			return this.tipoFrutta;
+		}
+
+		public int GetQuantitaFrutta()
+		{
+			return this.quantitaFrutta;
+		}
 
 
 		//SETTERS
@@ -31,6 +43,11 @@ namespace C_Shop2
 
 		//METODI
 
-
+		public void Mangia(int quantitaFruttaDaMangiare)
+		{
+			Console.WriteLine("Sto mangiando " + quantitaFruttaDaMangiare + " g di frutta");
+			this.quantitaFrutta = quantitaFrutta - quantitaFruttaDaMangiare;
+			Console.WriteLine("Adesso il sacchetto contiene: " + quantitaFrutta + " g di frutta");
+		}
 	}
 }
