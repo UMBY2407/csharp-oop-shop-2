@@ -16,9 +16,10 @@ namespace C_Shop2
 		private int ph;
 		private string sorgente;
 		private string tipo;
+		private List<Acqua> acque;
 
 		//COSTRUTTORE
-		public Acqua(string marca, string tipo, double litriBottiglia, int ph,string sorgente, string name, string description, float prezzo, int iva) : base (name, description, prezzo, iva)
+		public Acqua(string marca, string tipo, double litriBottiglia, int ph, string sorgente, string name, string description, float prezzo, int iva) : base (name, description, prezzo, iva)
 		{
 			this.marca = marca;
 			this.tipo = tipo;
@@ -57,10 +58,16 @@ namespace C_Shop2
 
 
 		//METODI
+		public void AddAcque(Acqua acque)
+		{
+			this.acque.Add(acque);
+		}
 
 		public void Bevi(double litriDaBere)
 		{
-			Console.WriteLine("Sto Bevendo: " + litriBottiglia + " litri");
+			Console.WriteLine("Sto Bevendo: " + litriDaBere + " litri");
+			this.litriBottiglia = litriBottiglia - litriDaBere;
+			Console.WriteLine("Ora rimangono " + this.litriBottiglia + " litri");
 		}
 
 		public void Riempi(double litri)
@@ -68,17 +75,21 @@ namespace C_Shop2
 			if(litriBottiglia + litri <= MaxLitri)
 			{
 				this.litriBottiglia += litri;
+				Console.WriteLine("Ho riempito: " + litri + " litri");
+				Console.WriteLine("Adesso la bottiglia contiene: " + litriBottiglia + " litri");
 			}
 			else
 			{
 				Console.WriteLine("Mi spiace hai raggiunto la capienza massima");
 				this.litriBottiglia = MaxLitri;
+				Console.WriteLine("Adesso la bottiglia contiene: " + litriBottiglia + " litri");
 			}
 		}
 
 		public void Svuota()
 		{
 			this.litriBottiglia = 0f;
+			Console.WriteLine("Bottiglia svuotata");
 		}
 	}
 }
