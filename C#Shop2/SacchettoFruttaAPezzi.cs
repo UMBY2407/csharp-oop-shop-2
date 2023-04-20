@@ -45,9 +45,9 @@ namespace C_Shop2
 
 		public void Mangia(int quantitaFruttaDaMangiare)
 		{
-			Console.WriteLine("Sto mangiando " + quantitaFruttaDaMangiare + " g di frutta");
+			Console.WriteLine("Sto mangiando " + quantitaFruttaDaMangiare + " g di " + GetTipoFrutta());
 			this.quantitaFrutta = quantitaFrutta - quantitaFruttaDaMangiare;
-			Console.WriteLine("Adesso il sacchetto contiene: " + quantitaFrutta + " g di frutta");
+			Console.WriteLine("Adesso il sacchetto contiene: " + quantitaFrutta + " g di " + GetTipoFrutta());
 		}
 	}
 }

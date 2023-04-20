@@ -84,7 +84,7 @@ namespace C_Shop2
 			return this.codice;
 		}
 
-		public void printProduct()
+		public void stampaProdotto()
 		{
 			setPriceWithIva();
 			Console.WriteLine("-------------- PRODOTTO -----------------");

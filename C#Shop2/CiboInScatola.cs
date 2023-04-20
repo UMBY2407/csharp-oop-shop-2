@@ -23,13 +23,31 @@ namespace C_Shop2
 		}
 
 		//GETTERS
+		public string getTipoDiCibo()
+		{
+			return this.tipoDiCibo;
+		}
 
+		public string getMarca()
+		{
+			return this.marca;
+		}
+
+		public int getQuantitaCibo()
+		{
+			return this.quantitaCibo;
+		}
 
 		//SETTERS
 
 
 		//METODI
 
-
+		public void Mangia(int quantitaFruttaDaMangiare)
+		{
+			Console.WriteLine("Sto mangiando " + quantitaFruttaDaMangiare + " g di " + getTipoDiCibo());
+			this.quantitaCibo = quantitaCibo - quantitaFruttaDaMangiare;
+			Console.WriteLine("Adesso il sacchetto contiene: " + quantitaCibo + " g di " + getTipoDiCibo());
+		}
 	}
 }
